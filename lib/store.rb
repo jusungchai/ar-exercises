@@ -5,9 +5,19 @@ class Store < ActiveRecord::Base
 
   validate :carry_apparel
 
+  before_destroy :count_employees
+
   def carry_apparel
     if (mens_apparel == false && womens_apparel == false)
       errors.add(:mens_apparel, "do you even want to sell anything?!")
+    end
+  end
+
+  private
+  
+  def count_employees
+    if (employees.size > 0)
+      false
     end
   end
 end
