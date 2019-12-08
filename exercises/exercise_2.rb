@@ -8,6 +8,6 @@ puts "----------"
 @store1 = Store.find_by(id: 1)
 @store2 = Store.find_by(id: 2)
 
-@store1.update(name: "Freshii", mens_apparel: false, womens_apparel: false)
+@store1.update(name: "Freshii")
 
 p @store1
